@@ -6,8 +6,10 @@ import {
   Image,
   TouchableHighlight,
   ScrollView,
+  TouchableWithoutFeedback,
   Dimensions,
 } from 'react-native'
+import ImageController from './ImageController'
 
 var contentHeight = Dimensions.get('window').height-66;
 
@@ -27,10 +29,15 @@ class ArticleController extends Component {
       origin: this.props.origin,
       title: this.props.title,
     }
+    this.onImagePressed = this.onImagePressed.bind(this);
   }
 
   componentDidMount() {
     // console.log(this.state.dataList);
+  }
+
+  onImagePressed(imgArray) {
+    this.props.navigator.push({name: 'ImageController', component: ImageController, params: {imgArray: imgArray}});
   }
 
   onBackPressed() {
@@ -43,10 +50,11 @@ class ArticleController extends Component {
     for (var item in this.state.dataList) {
       if (this.state.dataList.hasOwnProperty(item)) {
         if (typeof(this.state.dataList[item]) == "object") {
-          var imgItem = <Image key={item} source={{uri: this.state.dataList[item].url}} style={{marginTop: 12, marginBottom: 12, width: 335, height:this.state.dataList[item].height/this.state.dataList[item].width*335}}/>
+          var imgItem = <TouchableWithoutFeedback key={item*1000} onPress={()=>this.onImagePressed(imgArray)}><Image key={item} source={{uri: this.state.dataList[item].url}} style={{marginTop: 12, marginBottom: 12, width: 335, height:this.state.dataList[item].height/this.state.dataList[item].width*335}}/></TouchableWithoutFeedback>
           itemArray.push(imgItem);
+          imgArray.push(this.state.dataList[item].url);
         } else {
-          var textItem = <Text key={item} style={{marginLeft: 18, marginRight: 18, marginTop: 12, marginBottom: 12}}>{this.state.dataList[item]}</Text>;
+          var textItem = <Text key={item} style={{marginLeft: 18, marginRight: 18, marginTop: 12, marginBottom: 12, fontSize: 16}}>{this.state.dataList[item]}</Text>;
           itemArray.push(textItem);
         }
       }

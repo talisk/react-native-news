@@ -15,6 +15,8 @@ import {
 } from 'react-native';
 import MainController from './MainController'
 import ArticleController from './ArticleController'
+import ImageController from './ImageController'
+
 
 class Project extends Component {
 
@@ -27,6 +29,9 @@ class Project extends Component {
         break;
       case "ArticleController":
         Component = ArticleController;
+        break;
+      case "ImageController":
+        Component = ImageController;
         break;
       default:
         Component = MainController;
