@@ -1,0 +1,69 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Navigator,
+  TouchableHighlight,
+} from 'react-native';
+import MainController from './MainController'
+import ArticleController from './ArticleController'
+
+class Project extends Component {
+
+  renderScene(router, navigator) {
+    var Component = null;
+    this._navigator = navigator;
+    switch (router.name) {
+      case "Main":
+        Component = MainController;
+        break;
+      case "ArticleController":
+        Component = ArticleController;
+        break;
+      default:
+        Component = MainController;
+    }
+    return <Component {...router.params} navigator={navigator}/>
+  }
+
+  render() {
+    return (
+      <Navigator
+        initialRoute={{name: 'Main', componnet: MainController}}
+        configureScene={(route) => {
+          return Navigator.SceneConfigs.FadeAndroid;
+        }}
+        renderScene={this.renderScene}
+      />
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     flexDirection: 'row',
+    backgroundColor: '#cccccc',
+  },
+  main: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: '#cccccc',
+  },
+  tabBar: {
+  },
+});
+
+AppRegistry.registerComponent('Project', () => Project);
