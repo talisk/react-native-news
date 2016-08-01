@@ -39,7 +39,7 @@ class Project extends Component {
       <Navigator
         initialRoute={{name: 'Main', componnet: MainController}}
         configureScene={(route) => {
-          return Navigator.SceneConfigs.FadeAndroid;
+          return Navigator.SceneConfigs.FloatFromBottom;
         }}
         renderScene={this.renderScene}
       />

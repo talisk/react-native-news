@@ -5,6 +5,7 @@ import {
   Text,
   TouchableHighlight,
   Navigator,
+  StatusBar,
 } from 'react-native'
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view'
 import NewsList from './NewsList'
@@ -14,6 +15,7 @@ class MainController extends Component {
   render() {
     return (
       <View>
+        <StatusBar barStyle="light-content"/>
         <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#BB2222'}}>
           <View style={{flex:1, marginTop:22, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <Text style={{color:'#FFFFFF', fontSize:17}}>ReactNews</Text>
