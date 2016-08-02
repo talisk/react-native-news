@@ -12,6 +12,7 @@ import {
 import ImageController from './ImageController'
 
 var contentHeight = Dimensions.get('window').height-66;
+var contentWidth = Dimensions.get('window').width;
 
 class ArticleController extends Component {
 
@@ -33,7 +34,7 @@ class ArticleController extends Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   onImagePressed(imgArray) {
@@ -44,13 +45,17 @@ class ArticleController extends Component {
     this.props.navigator.pop();
   }
 
+  onSharePressed() {
+
+  }
+
   render() {
     var itemArray = [];
     var imgArray = [];
     for (var item in this.state.dataList) {
       if (this.state.dataList.hasOwnProperty(item)) {
         if (typeof(this.state.dataList[item]) == "object") {
-          var imgItem = <TouchableWithoutFeedback key={item*1000} onPress={()=>this.onImagePressed(imgArray)}><Image key={item} source={{uri: this.state.dataList[item].url}} style={{marginTop: 12, marginBottom: 12, width: 335, height:this.state.dataList[item].height/this.state.dataList[item].width*335}}/></TouchableWithoutFeedback>
+          var imgItem = <TouchableWithoutFeedback key={item*1000} onPress={()=>this.onImagePressed(imgArray)}><Image key={item} source={{uri: this.state.dataList[item].url}} style={{marginTop: 12, marginBottom: 12, width: contentWidth-36, height:this.state.dataList[item].height/this.state.dataList[item].width*(contentWidth-36)}}/></TouchableWithoutFeedback>
           itemArray.push(imgItem);
           imgArray.push(this.state.dataList[item].url);
         } else {
@@ -63,13 +68,20 @@ class ArticleController extends Component {
     return (
       <View>
         <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#BB2222'}}>
-          <TouchableHighlight onPress={()=>this.onBackPressed()} style={{marginTop: 22, justifyContent:'center'}}>
-            <Text style={{color: '#FFFFFF'}}>
-              Back
-            </Text>
-          </TouchableHighlight>
-          <View style={{flex:1, marginTop:22, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={{color:'#FFFFFF', fontSize:17}}>{this.state.origin}</Text>
+          <View style={{marginTop:22, flex:1, flexDirection:'row', marginLeft: 12, marginRight: 12}}>
+            <TouchableHighlight onPress={()=>this.onBackPressed()} style={{justifyContent:'center'}}>
+              <Text style={{color: '#FFFFFF'}}>
+                返回
+              </Text>
+            </TouchableHighlight>
+            <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <Text style={{color:'#FFFFFF', fontSize:17}}>{this.state.origin}</Text>
+            </View>
+            <TouchableHighlight onPress={()=>this.onSharePressed()} style={{justifyContent:'center'}}>
+              <Text style={{color: '#FFFFFF'}}>
+                分享
+              </Text>
+            </TouchableHighlight>
           </View>
         </View>
         <ScrollView style={{height: contentHeight}} contentContainerStyle={{alignItems: 'center'}}>
