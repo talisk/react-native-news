@@ -71,8 +71,8 @@ class NewsList extends Component {
     );
   }
 
-  pressRow(allList, title, source) {
-    this.props.navigator.push({name:'ArticleController', component: ArticleController, params: { dataList: allList, title: title, origin: source}});
+  pressRow(allList, title, source, url) {
+    this.props.navigator.push({name:'ArticleController', component: ArticleController, params: { dataList: allList, title: title, origin: source, url: url}});
   }
 
   renderRow(data) {
@@ -83,7 +83,7 @@ class NewsList extends Component {
     }
 
     return (
-      <TouchableHighlight onPress={ () => this.pressRow(data.allList, data.title, data.source) }>
+      <TouchableHighlight onPress={ () => this.pressRow(data.allList, data.title, data.source, data.link) }>
         <View style={styles.cell}>
           <Image style={styles.thumbnail} source={thumbnail}/>
           <View style={styles.rightContainer}>

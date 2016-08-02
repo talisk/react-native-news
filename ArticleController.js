@@ -29,6 +29,7 @@ class ArticleController extends Component {
       dataList: this.props.dataList,
       origin: this.props.origin,
       title: this.props.title,
+      url: this.props.url,
     }
     this.onImagePressed = this.onImagePressed.bind(this);
   }
@@ -59,7 +60,7 @@ class ArticleController extends Component {
           itemArray.push(imgItem);
           imgArray.push(this.state.dataList[item].url);
         } else {
-          var textItem = <Text key={item} style={{marginLeft: 18, marginRight: 18, marginTop: 12, marginBottom: 12, fontSize: 16}}>{this.state.dataList[item]}</Text>;
+          var textItem = <Text key={item} style={{marginLeft: 18, marginRight: 18, marginTop: 12, marginBottom: 12, fontSize: 15}}>{this.state.dataList[item]}</Text>;
           itemArray.push(textItem);
         }
       }
@@ -75,7 +76,7 @@ class ArticleController extends Component {
               </Text>
             </TouchableHighlight>
             <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <Text style={{color:'#FFFFFF', fontSize:17}}>{this.state.origin}</Text>
+              <Text style={{color:'#FFFFFF', fontSize:17}}>来源：{this.state.origin}</Text>
             </View>
             <TouchableHighlight onPress={()=>this.onSharePressed()} style={{justifyContent:'center'}}>
               <Text style={{color: '#FFFFFF'}}>
@@ -85,7 +86,13 @@ class ArticleController extends Component {
           </View>
         </View>
         <ScrollView style={{height: contentHeight}} contentContainerStyle={{alignItems: 'center'}}>
+          <Text style={{marginLeft: 18, marginRight: 18, marginTop: 12, marginBottom: 12, fontSize: 18, fontWeight: 'bold'}}>
+            {this.state.title}
+          </Text>
           {itemArray}
+          <Text style={{marginLeft: 18, marginRight: 18, marginTop: 12, marginBottom: 12, fontSize: 15}}>
+            原文链接：{this.state.url}
+          </Text>
         </ScrollView>
       </View>
     )
