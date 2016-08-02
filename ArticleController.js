@@ -33,7 +33,7 @@ class ArticleController extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.state.dataList);
+    
   }
 
   onImagePressed(imgArray) {
@@ -78,43 +78,6 @@ class ArticleController extends Component {
       </View>
     )
   }
-
-  // render() {
-  //   var strArray = [];
-  //   var imgArray = [];
-  //   for (var item in this.state.dataList) {
-  //     if (this.state.dataList.hasOwnProperty(item)) {
-  //       if (typeof(this.state.dataList[item]) == "object") {
-  //         var imgItem = <Image key={item} source={{uri: this.state.dataList[item].url}}/>
-  //         imgArray.push(imgItem);
-  //       } else {
-  //         var textItem = <Text key={item}>{this.state.dataList[item]}</Text>;
-  //         strArray.push(textItem);
-  //       }
-  //     }
-  //   }
-  //
-  //   return (
-  //     <View>
-  //       <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#BB2222'}}>
-  //         <TouchableHighlight onPress={()=>this.onBackPressed()} style={{marginTop: 22, justifyContent:'center'}}>
-  //           <Text style={{color: '#FFFFFF'}}>
-  //             Back
-  //           </Text>
-  //         </TouchableHighlight>
-  //         <View style={{flex:1, marginTop:22, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-  //           <Text style={{color:'#FFFFFF', fontSize:17}}>{this.state.origin}</Text>
-  //         </View>
-  //       </View>
-  //       <ScrollView style={{height: contentHeight}}>
-  //         {imgArray}
-  //         {strArray}
-  //       </ScrollView>
-  //     </View>
-  //   )
-  // }
-
-
 }
 
 export default ArticleController
