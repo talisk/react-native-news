@@ -88,9 +88,9 @@ class NewsList extends Component {
           <Image style={styles.thumbnail} source={thumbnail}/>
           <View style={styles.rightContainer}>
             <Text style={{fontSize:17}}>{data.title}</Text>
-            <View style={{flexDirection:'row', alignItems:'flex-end'}}>
-              <Text style={{fontSize:13}} numberOfLines={1}>{data.link}</Text>
-              <Text style={{color: '#FFFFFF', fontSize: 13}}>{data.source}</Text>
+            <View style={{marginTop: 8, flex:1, flexDirection:'row', alignItems:'stretch', justifyContent: 'space-between'}}>
+              <Text style={{fontSize: 13}} numberOfLines={1}>{data.pubDate}</Text>
+              <Text style={{fontSize: 13}}>{data.source}</Text>
             </View>
           </View>
         </View>
@@ -129,6 +129,9 @@ var styles = StyleSheet.create({
   },
   rightContainer: {
     flex: 1,
+    marginTop: 8,
+    marginLeft: 8,
+    marginRight: 8,
   },
   thumbnail: {
     width: 100,
