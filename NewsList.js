@@ -87,7 +87,7 @@ class NewsList extends Component {
         <View style={styles.cell}>
           <Image style={styles.thumbnail} source={thumbnail}/>
           <View style={styles.rightContainer}>
-            <Text style={{fontSize:17}}>{data.title}</Text>
+            <Text style={{fontSize:17}} numberOfLines={2}>{data.title}</Text>
             <View style={{marginTop: 8, flex:1, flexDirection:'row', alignItems:'stretch', justifyContent: 'space-between'}}>
               <Text style={{fontSize: 13}} numberOfLines={1}>{data.pubDate}</Text>
               <Text style={{fontSize: 13}}>{data.source}</Text>
