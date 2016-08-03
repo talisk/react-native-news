@@ -783,6 +783,7 @@
 					"-framework",
 					"\"TencentOpenAPI\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kai-Sun.ReactNews";
 				PRODUCT_NAME = ReactNews;
 				PROVISIONING_PROFILE = "";
 			};
@@ -816,6 +817,7 @@
 					"-framework",
 					"\"TencentOpenAPI\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kai-Sun.ReactNews";
 				PRODUCT_NAME = ReactNews;
 				PROVISIONING_PROFILE = "";
 			};
