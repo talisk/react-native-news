@@ -76,7 +76,7 @@ class NewsList extends Component {
   }
 
   renderRow(data) {
-    var thumbnail = require('./img/noimg@2x.png');
+    var thumbnail = require('./img/rn_placeholder.png');
 
     if (data.imageurls.length) {
       thumbnail = {uri: data.imageurls[0].url};
