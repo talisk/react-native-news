@@ -57,11 +57,11 @@ class ArticleController extends Component {
 
   onSharePressed() {
     var BUTTONS = [
+      'QQ好友',
+      '微信好友',
       '朋友圈',
       '新浪微博',
       'QQ空间',
-      '微信好友',
-      'QQ好友',
       '取消分享',
     ];
 
@@ -98,7 +98,7 @@ class ArticleController extends Component {
             title: this.state.title + " - ReactNews新闻分享",
             description: 'ReactNews新闻分享',
             webpageUrl: this.state.url,
-            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : "http://7xr4ds.com1.z0.glb.clouddn.com/temp-storage/rnlogo.png",
           });
           break;
         case '朋友圈':
@@ -108,7 +108,7 @@ class ArticleController extends Component {
             title: this.state.title + ' - ReactNews新闻分享',
             description: 'ReactNews新闻分享',
             webpageUrl: this.state.url,
-            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : "http://7xr4ds.com1.z0.glb.clouddn.com/temp-storage/rnlogo.png",
           });
           break;
 
@@ -119,7 +119,7 @@ class ArticleController extends Component {
             title: this.state.title,
             description: 'ReactNews新闻分享',
             webpageUrl: this.state.url,
-            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : "http://7xr4ds.com1.z0.glb.clouddn.com/temp-storage/rnlogo.png",
           });
           break;
         case 'QQ空间':
@@ -129,7 +129,7 @@ class ArticleController extends Component {
             title: this.state.title,
             description: 'ReactNews新闻分享',
             webpageUrl: this.state.url,
-            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : "http://7xr4ds.com1.z0.glb.clouddn.com/temp-storage/rnlogo.png",
           });
           break;
         default:
