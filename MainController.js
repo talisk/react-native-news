@@ -28,7 +28,7 @@ class MainController extends Component {
           tabBarInactiveTextColor='#BBBBBB'
           renderTabBar={() => <ScrollableTabBar/>}>
           <NewsList
-            tabLabel='国内'
+            tabLabel='综合'
             navigator={this.props.navigator}
             id='5572a109b3cdc86cf39001db'
           />
@@ -36,6 +36,11 @@ class MainController extends Component {
             tabLabel='国际'
             navigator={this.props.navigator}
             id='5572a109b3cdc86cf39001de'
+          />
+          <NewsList
+            tabLabel='社会'
+            navigator={this.props.navigator}
+            id='5572a10bb3cdc86cf39001f8'
           />
           <NewsList
             tabLabel='娱乐'
@@ -53,9 +58,19 @@ class MainController extends Component {
             id='5572a10ab3cdc86cf39001f4'
           />
           <NewsList
-            tabLabel='社会'
+            tabLabel='互联网'
             navigator={this.props.navigator}
-            id='5572a10bb3cdc86cf39001f8'
+            id='5572a109b3cdc86cf39001e3'
+          />
+          <NewsList
+            tabLabel='军事'
+            navigator={this.props.navigator}
+            id='5572a109b3cdc86cf39001df'
+          />
+          <NewsList
+            tabLabel='财经'
+            navigator={this.props.navigator}
+            id='5572a109b3cdc86cf39001e0'
           />
           <NewsList
             tabLabel='电视'
