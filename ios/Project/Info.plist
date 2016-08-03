@@ -27,7 +27,7 @@
 			<string>sina</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wb1915346979</string>
+				<string>wb1470574652</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,7 +37,7 @@
 			<string>qq</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1104903684</string>
+				<string>tencent1105000946</string>
 			</array>
 		</dict>
 		<dict>
@@ -47,7 +47,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx1111111</string>
+				<string>wx8b7842f654cae6dd</string>
 			</array>
 		</dict>
 	</array>

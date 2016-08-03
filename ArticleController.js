@@ -7,9 +7,15 @@ import {
   TouchableHighlight,
   ScrollView,
   TouchableWithoutFeedback,
+  ActionSheetIOS,
   Dimensions,
+  Linking,
 } from 'react-native'
 import ImageController from './ImageController'
+
+import * as WechatAPI from 'react-native-wx'
+import * as QQAPI from 'react-native-qq'
+import * as WeiboAPI from 'react-native-weibo'
 
 var contentHeight = Dimensions.get('window').height-66;
 var contentWidth = Dimensions.get('window').width;
@@ -21,7 +27,9 @@ class ArticleController extends Component {
 
   }
 
-  static defaultProps = {}
+  static defaultProps = {
+    clicked: 'none',
+  }
 
   constructor(props) {
     super(props)
@@ -30,6 +38,7 @@ class ArticleController extends Component {
       origin: this.props.origin,
       title: this.props.title,
       url: this.props.url,
+      imgList: this.props.imgList,
     }
     this.onImagePressed = this.onImagePressed.bind(this);
   }
@@ -47,7 +56,86 @@ class ArticleController extends Component {
   }
 
   onSharePressed() {
+    var BUTTONS = [
+      '朋友圈',
+      '新浪微博',
+      'QQ空间',
+      '微信好友',
+      'QQ好友',
+      '取消分享',
+    ];
 
+    ActionSheetIOS.showActionSheetWithOptions({
+      options: BUTTONS,
+      cancelButtonIndex: BUTTONS.length-1,
+      tintColor: 'lightBlue',
+    },
+    (buttonIndex) => {
+      // this.setState({ clicked: BUTTONS[buttonIndex] });
+      switch (BUTTONS[buttonIndex]) {
+        case '新浪微博':
+          console.log("weibo");
+          var shareItem;
+
+          if (this.state.imgList.length !== 0) {
+            shareItem = {
+              type: 'image',
+              text: this.state.title + " - 原文：" + this.state.url + "- 来自ReactNews",
+              imageUrl: this.state.imgList[0].url,
+            };
+          } else {
+            shareItem = {
+              type: 'text',
+              text: this.state.title + " - 原文：" + this.state.url + " - 来自ReactNews",
+            }
+          }
+          WeiboAPI.share(shareItem);
+          break;
+        case '微信好友':
+          console.log("friends");
+          WechatAPI.shareToSession({
+            type: 'news',
+            title: this.state.title + " - ReactNews新闻分享",
+            description: 'ReactNews新闻分享',
+            webpageUrl: this.state.url,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+          });
+          break;
+        case '朋友圈':
+          console.log("moment");
+          WechatAPI.shareToTimeline({
+            type: 'news',
+            title: this.state.title + ' - ReactNews新闻分享',
+            description: 'ReactNews新闻分享',
+            webpageUrl: this.state.url,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+          });
+          break;
+
+        case 'QQ好友':
+          console.log("qqfriends");
+          QQAPI.shareToQQ({
+            type: 'news',
+            title: this.state.title,
+            description: 'ReactNews新闻分享',
+            webpageUrl: this.state.url,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+          });
+          break;
+        case 'QQ空间':
+          console.log("qzone");
+          QQAPI.shareToQzone({
+            type: 'news',
+            title: this.state.title,
+            description: 'ReactNews新闻分享',
+            webpageUrl: this.state.url,
+            imageUrl: this.state.imgList.length !== 0 ? this.state.imgList[0].url : null,
+          });
+          break;
+        default:
+          console.log("cancel");
+      }
+    });
   }
 
   render() {
