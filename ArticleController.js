@@ -68,7 +68,7 @@ class ArticleController extends Component {
     ActionSheetIOS.showActionSheetWithOptions({
       options: BUTTONS,
       cancelButtonIndex: BUTTONS.length-1,
-      tintColor: 'lightBlue',
+      tintColor: '#364c62',
     },
     (buttonIndex) => {
       // this.setState({ clicked: BUTTONS[buttonIndex] });
@@ -156,7 +156,7 @@ class ArticleController extends Component {
 
     return (
       <View>
-        <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#BB2222'}}>
+        <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#364c62'}}>
           <View style={{marginTop:22, flex:1, flexDirection:'row', marginLeft: 12, marginRight: 12}}>
             <TouchableHighlight onPress={()=>this.onBackPressed()} style={{justifyContent:'center'}}>
               <Text style={{color: '#FFFFFF'}}>

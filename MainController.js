@@ -16,7 +16,7 @@ class MainController extends Component {
     return (
       <View>
         <StatusBar barStyle="light-content"/>
-        <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#BB2222'}}>
+        <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#364c62'}}>
           <View style={{flex:1, marginTop:22, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <View style={{backgroundColor: '#363b40', overflow: 'hidden', borderRadius: 6}}>
               <Text style={{marginLeft: 2, marginRight: 2, marginBottom: 3, marginTop: 3, color: '#b7bec5', fontSize:17}}>
@@ -29,7 +29,7 @@ class MainController extends Component {
           </View>
         </View>
         <ScrollableTabView
-          tabBarBackgroundColor='#BB2222'
+          tabBarBackgroundColor='#364c62'
           tabBarUnderlineColor='#FFFFFF'
           tabBarActiveTextColor='#FFFFFF'
           tabBarInactiveTextColor='#BBBBBB'
