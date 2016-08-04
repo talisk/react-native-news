@@ -10,6 +10,7 @@ import {
   TouchableHighlight,
 } from 'react-native'
 import ArticleController from './ArticleController'
+import Spinner from 'react-native-spinkit'
 
 var contentHeight = Dimensions.get('window').height-116;
 var contentWidth = Dimensions.get('window').width;
@@ -32,6 +33,7 @@ class NewsList extends Component {
       }),
       loaded: false,
       id: this.props.id,
+      spinkitSize: 50,
     };
     this.pressRow = this.pressRow.bind(this);
     this.fetchData = this.fetchData.bind(this);
@@ -66,8 +68,16 @@ class NewsList extends Component {
 
   renderLoadingView() {
     return (
-      <View style={{alignItems: 'center'}}>
-        <Text>Loading...</Text>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: contentHeight/2-this.state.spinkitSize}}>
+        <Spinner
+          size={this.state.spinkitSize}
+          color='#474c51'
+          type='Wave'
+          style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
+        />
+        <Text style={{fontSize: 16, fontWeight: 'bold', color: '#474c51'}}>
+          Loading
+        </Text>
       </View>
     );
   }
