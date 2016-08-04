@@ -18,7 +18,14 @@ class MainController extends Component {
         <StatusBar barStyle="light-content"/>
         <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#BB2222'}}>
           <View style={{flex:1, marginTop:22, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={{color:'#FFFFFF', fontSize:17}}>ReactNews</Text>
+            <View style={{backgroundColor: '#363b40', overflow: 'hidden', borderRadius: 6}}>
+              <Text style={{marginLeft: 2, marginRight: 2, marginBottom: 3, marginTop: 3, color: '#b7bec5', fontSize:17}}>
+                RN
+              </Text>
+            </View>
+            <View style={{marginLeft: 4}}>
+              <Text style={{color:'#FFFFFF', fontSize:17}}>ReactNews</Text>
+            </View>
           </View>
         </View>
         <ScrollableTabView
@@ -26,6 +33,7 @@ class MainController extends Component {
           tabBarUnderlineColor='#FFFFFF'
           tabBarActiveTextColor='#FFFFFF'
           tabBarInactiveTextColor='#BBBBBB'
+          tabBarTextStyle={{fontSize: 15}}
           renderTabBar={() => <ScrollableTabBar/>}>
           <NewsList
             tabLabel='综合'

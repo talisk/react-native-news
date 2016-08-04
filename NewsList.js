@@ -12,6 +12,7 @@ import {
 import ArticleController from './ArticleController'
 
 var contentHeight = Dimensions.get('window').height-116;
+var contentWidth = Dimensions.get('window').width;
 
 class NewsList extends Component {
 
@@ -109,6 +110,7 @@ class NewsList extends Component {
           contentInset = {{top: 0, left: 0, bottom: 0, right: 0}}
           dataSource = {this.state.dataSource}
           renderRow = {this.renderRow}
+          renderSeparator={(sectionID, rowID) => <View key={`${sectionID}-${rowID}`} style={{height: 0.5, marginLeft: 100, width: contentWidth-100 , backgroundColor: '#DDDDDD',}} />}
           style = {styles.listView}
         />
       </View>
