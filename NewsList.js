@@ -75,9 +75,6 @@ class NewsList extends Component {
           type='Wave'
           style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
         />
-        <Text style={{fontSize: 16, fontWeight: 'bold', color: '#474c51'}}>
-          Loading
-        </Text>
       </View>
     );
   }
