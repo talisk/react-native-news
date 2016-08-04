@@ -17,8 +17,13 @@ import MainController from './MainController'
 import ArticleController from './ArticleController'
 import ImageController from './ImageController'
 
+import codePush from 'react-native-code-push'
 
 class Project extends Component {
+
+  componentDidMount() {
+    codePush.sync();
+  }
 
   renderScene(router, navigator) {
     var Component = null;
