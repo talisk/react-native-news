@@ -91,7 +91,7 @@ class NewsList extends Component {
     }
 
     return (
-      <TouchableHighlight onPress={ () => this.pressRow(data.allList, data.title, data.source, data.link, data.imageurls) }>
+      <TouchableHighlight style={{backgroundColor: '#FFFFFF'}} underlayColor={'#CCCCCC'} onPress={ () => this.pressRow(data.allList, data.title, data.source, data.link, data.imageurls) }>
         <View style={styles.cell}>
           <Image style={styles.thumbnail} source={thumbnail}/>
           <View style={styles.rightContainer}>

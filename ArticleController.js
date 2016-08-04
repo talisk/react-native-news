@@ -4,9 +4,8 @@ import {
   View,
   Text,
   Image,
-  TouchableHighlight,
+  TouchableOpacity,
   ScrollView,
-  TouchableWithoutFeedback,
   ActionSheetIOS,
   Dimensions,
   Linking,
@@ -144,7 +143,7 @@ class ArticleController extends Component {
     for (var item in this.state.dataList) {
       if (this.state.dataList.hasOwnProperty(item)) {
         if (typeof(this.state.dataList[item]) == "object") {
-          var imgItem = <TouchableWithoutFeedback key={item*1000} onPress={()=>this.onImagePressed(imgArray)}><Image key={item} source={{uri: this.state.dataList[item].url}} style={{marginTop: 12, marginBottom: 12, width: contentWidth-36, height:this.state.dataList[item].height/this.state.dataList[item].width*(contentWidth-36)}}/></TouchableWithoutFeedback>
+          var imgItem = <TouchableOpacity key={item*1000} activeOpacity={0.7} onPress={()=>this.onImagePressed(imgArray)}><Image key={item} source={{uri: this.state.dataList[item].url}} style={{marginTop: 12, marginBottom: 12, width: contentWidth-36, height:this.state.dataList[item].height/this.state.dataList[item].width*(contentWidth-36)}}/></TouchableOpacity>
           itemArray.push(imgItem);
           imgArray.push(this.state.dataList[item].url);
         } else {
@@ -158,19 +157,19 @@ class ArticleController extends Component {
       <View>
         <View style={{flexDirection:'row', justifyContent:'center',height:66,backgroundColor:'#364c62'}}>
           <View style={{marginTop:22, flex:1, flexDirection:'row', marginLeft: 12, marginRight: 12}}>
-            <TouchableHighlight onPress={()=>this.onBackPressed()} style={{justifyContent:'center'}}>
+            <TouchableOpacity onPress={()=>this.onBackPressed()} style={{justifyContent:'center'}}>
               <Text style={{color: '#FFFFFF'}}>
                 返回
               </Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
             <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <Text style={{color:'#FFFFFF', fontSize:17}}>来源：{this.state.origin}</Text>
             </View>
-            <TouchableHighlight onPress={()=>this.onSharePressed()} style={{justifyContent:'center'}}>
+            <TouchableOpacity onPress={()=>this.onSharePressed()} style={{justifyContent:'center'}}>
               <Text style={{color: '#FFFFFF'}}>
                 分享
               </Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </View>
         <ScrollView style={{height: contentHeight}} contentContainerStyle={{alignItems: 'center'}}>
