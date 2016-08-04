@@ -3,8 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableHighlight,
-  Navigator,
   StatusBar,
 } from 'react-native'
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view'

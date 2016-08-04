@@ -11,11 +11,10 @@ import {
   Text,
   View,
   Navigator,
-  TouchableHighlight,
 } from 'react-native';
-import MainController from './MainController'
-import ArticleController from './ArticleController'
-import ImageController from './ImageController'
+import MainController from './component/MainController'
+import ArticleController from './component/ArticleController'
+import ImageController from './component/ImageController'
 
 import codePush from 'react-native-code-push'
 

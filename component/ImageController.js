@@ -3,8 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableHighlight,
-  Navigator,
   Dimensions,
 } from 'react-native'
 import Gallery from 'react-native-gallery'
