@@ -36,6 +36,7 @@
 		B124FBBA1D5087F700329C19 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B124FBB91D5087F700329C19 /* libiconv.tbd */; };
 		B124FBBC1D50880600329C19 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B124FBBB1D50880600329C19 /* libc++.tbd */; };
 		B16A8C1B1D5485F800C86AE9 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16A8C1A1D5485F800C86AE9 /* Bugly.framework */; };
+		B16A8C1E1D5495C400C86AE9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B16A8C1D1D5495C400C86AE9 /* Default-568h@2x.png */; };
 		FC819F74B7CF4BA68A9F25F6 /* libRCTWeiboAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 264AB2CB7ACF41388EF73CF9 /* libRCTWeiboAPI.a */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +188,7 @@
 		B124FBB91D5087F700329C19 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		B124FBBB1D50880600329C19 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B16A8C1A1D5485F800C86AE9 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		B16A8C1D1D5495C400C86AE9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B58F9E5678994DD0A1BC9E15 /* RCTWeiboAPI.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWeiboAPI.xcodeproj; path = "../node_modules/react-native-weibo/ios/RCTWeiboAPI.xcodeproj"; sourceTree = "<group>"; };
 		F7C9F55DB193455F9095A484 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,6 +365,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				B16A8C1D1D5495C400C86AE9 /* Default-568h@2x.png */,
 				B16A8C1A1D5485F800C86AE9 /* Bugly.framework */,
 				B124FBBB1D50880600329C19 /* libc++.tbd */,
 				B124FBB91D5087F700329C19 /* libiconv.tbd */,
@@ -677,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B16A8C1E1D5495C400C86AE9 /* Default-568h@2x.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				B124FBAA1D5086AD00329C19 /* WeiboSDK.bundle in Resources */,
 			);
