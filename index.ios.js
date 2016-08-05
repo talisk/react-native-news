@@ -11,6 +11,7 @@ import {
   Text,
   View,
   Navigator,
+  AppState,
 } from 'react-native';
 import MainController from './component/MainController'
 import ArticleController from './component/ArticleController'
@@ -21,7 +22,13 @@ import codePush from 'react-native-code-push'
 class Project extends Component {
 
   componentDidMount() {
-    codePush.sync();
+    AppState.addEventListener("change", (newState) => {
+      newState === "active" && codePush.sync({
+        installMode: codePush.InstallMode.ON_NEXT_RESUME,
+        mandatoryInstallMode: codePush.InstallMode.ON_NEXT_RESUME,
+      });
+    });
+
   }
 
   renderScene(router, navigator) {
