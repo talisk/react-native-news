@@ -35,6 +35,7 @@
 		B124FBB81D50870C00329C19 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B124FBB71D50870C00329C19 /* CoreText.framework */; };
 		B124FBBA1D5087F700329C19 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B124FBB91D5087F700329C19 /* libiconv.tbd */; };
 		B124FBBC1D50880600329C19 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B124FBBB1D50880600329C19 /* libc++.tbd */; };
+		B16A8C1B1D5485F800C86AE9 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16A8C1A1D5485F800C86AE9 /* Bugly.framework */; };
 		FC819F74B7CF4BA68A9F25F6 /* libRCTWeiboAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 264AB2CB7ACF41388EF73CF9 /* libRCTWeiboAPI.a */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +186,7 @@
 		B124FBB71D50870C00329C19 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B124FBB91D5087F700329C19 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		B124FBBB1D50880600329C19 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		B16A8C1A1D5485F800C86AE9 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		B58F9E5678994DD0A1BC9E15 /* RCTWeiboAPI.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWeiboAPI.xcodeproj; path = "../node_modules/react-native-weibo/ios/RCTWeiboAPI.xcodeproj"; sourceTree = "<group>"; };
 		F7C9F55DB193455F9095A484 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
+				B16A8C1B1D5485F800C86AE9 /* Bugly.framework in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
@@ -360,6 +363,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				B16A8C1A1D5485F800C86AE9 /* Bugly.framework */,
 				B124FBBB1D50880600329C19 /* libc++.tbd */,
 				B124FBB91D5087F700329C19 /* libiconv.tbd */,
 				B124FBB71D50870C00329C19 /* CoreText.framework */,
@@ -454,6 +458,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				B16A8C1C1D54880B00C86AE9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -694,6 +699,19 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		B16A8C1C1D54880B00C86AE9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# Copyright 2014-2016 Bugly, Tencent. All rights reserved.\n#\n# V1.2.1\n#\n# 2016.03.02\n#\n#\n################################################################################\n# # 注意: 请配置下面的信息\n################################################################################\nBUGLY_APP_ID=\"900045584\"\nBUGLY_APP_KEY=\"eyKZWuYkcqVsqzn6\"\nBUNDLE_IDENTIFIER=\"com.Kai-Sun.ReactNews\"\n################################################################################\n# # 自定义配置\n################################################################################\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\nUPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\nUPLOAD_ARCHIVE_ONLY=0\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n#\n#\n# This script will extract symbols from the .dSYM and generate .symbol file(Bugly supported) and upload to server.\n# You could visit http://bugly.qq.com to get more details about Bugly.(Optional: buylyweb.et.wsd.com)\n#\n# Usage:\n#   * The instructions assume you have copyed this script into your project int Xcode.\n#   * Copy the \"buglySymbolIOS.jar\" file into the \"~/bin\" folder.\n#   * Open the project editor, select your build target.\n#   * Click \"Build Phases\" at the top of the project editor.\n#   * Click \"+\" button in the top left corner and select \"New Run Script Phase\".\n#   * Click \"Run Script\".\n#   * Paste the following script into the dark text box. You will have to uncomment the lines (remove the #) of course.\n#\n# --- SCRIPT BEGINS ON NEXT LINE, COPY AND EDIT FROM THERE ---\n#\n#\n#\n# --- END OF SCRIPT ---\n\n\n################################################################################\n# 注意: 如果你不知道此脚本的执行流程和用法，请不要随便修改！\n################################################################################\n\n# 退出执行并打印提示信息\nexitWithMessage() {\n    echo \"--------------------------------\"\n    echo -e \"${1}\"\n    echo \"--------------------------------\"\n    echo \"No upload and exit.\"\n    echo \"----------------------------------------------------------------\"\n    exit ${2}\n}\n\necho \"----------------------------------------------------------------\"\necho \"Copyright 2014-2015 Bugly @Tencent. All rights reserved.\"\n\necho \"This script will extract symbols from the .dSYM file and generate .symbol file(Bugly supported) and upload to server.\"\necho \"You could visit http://bugly.qq.com to get more details about Bugly.\"\necho \"----------------------------------------------------------------\"\n\necho \"Uploading dSYM to Bugly.\"\necho \"\"\n\n# Bugly服务域名\nDSYM_UPLOAD_DOMAIN=\"bugly.qq.com\"\n\n# 读取Info.plist文件中的版本信息\necho \"Info.Plist : ${INFOPLIST_FILE}\"\n\nBUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\nBUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n\n# 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\nif [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\nBUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\nelse\nBUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\nfi\n\n# Bugly符号提取工具路径, 请确保buglySymboliOS.jar的路径是正确的\nBUGLY_SYMBOL_JAR_PATH=\"${SRCROOT}/dsymtool/buglySymboliOS.jar\"\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\necho \"--------------------------------\"\necho \"Step 1: Prepare application information.\"\necho \"--------------------------------\"\n\necho \"Product Name: ${PRODUCT_NAME}\"\necho \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\necho \"Version: ${BUNDLE_SHORT_VERSION}\"\necho \"Build: ${BUNDLE_VERSION}\"\n\necho \"Bugly App ID: ${BUGLY_APP_ID}\"\necho \"Bugly App key: ${BUGLY_APP_KEY}\"\necho \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n\necho \"--------------------------------\"\necho \"Step 2: Check the arguments ...\"\n\n##检查模拟器编译是否允许上传符号\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\nif [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\nexitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\nfi\nfi\n\n##检查是否是Release模式编译\nif [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\nif [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\nexitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\nfi\nfi\n\n##检查是否Archive操作\nif [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\nif [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\necho \"Archive the package\"\nelse\nexitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\nfi\nfi\n\n# 检查必须参数是否设置\nif [ ! \"${BUGLY_APP_ID}\" ]; then\nexitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\nfi\nif [[ \"${BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\nexitWithMessage \"Error: Bugly App ID not defined.\" 0\nfi\n\nif [ ! \"${BUGLY_APP_KEY}\" ]; then\nexitWithMessage \"Error: Bugly APP Key not defined.\" 0\nfi\n\nif [ ! \"${BUNDLE_IDENTIFIER}\" ]; then\nexitWithMessage \"Error: Bundle Identifier not defined.\" 0\nfi\n\nfunction uploadDSYM {\n    DSYM_SRC=\"$1\"\n    echo \".dSYM file: ${DSYM_SRC}\"\n    if [ ! -d \"$DSYM_SRC\" ]; then\n    exitWithMessage \"dSYM source not found: ${DSYM_SRC}\" 0\n    fi\n    DSYM_FILE_NAME=${DSYM_SRC##*/}\n        DSYM_SYMBOL_OUT_ZIP_NAME=\"${DSYM_FILE_NAME}.bSymbol.zip\"\n        # 替换空格\n        DSYM_SYMBOL_OUT_ZIP_NAME=\"${DSYM_SYMBOL_OUT_ZIP_NAME// /_}\"\n        \n        # 声明符号表临时目录和备份目录\n        DSYM_ZIP_OUT_DIR=${BUILD_DIR}/BuglySymbolsTemp\n        DSYM_SYMBOL_BACKUP_DIR=${BUILD_DIR}/BuglySymbolsBackup\n        \n        if [ ! -e \"${DSYM_ZIP_OUT_DIR}\" ]; then\n        mkdir ${DSYM_ZIP_OUT_DIR}\n        fi\n        \n        if [ ! -e \"${DSYM_SYMBOL_BACKUP_DIR}\" ]; then\n        mkdir ${DSYM_SYMBOL_BACKUP_DIR}\n        fi\n        \n        # 备份并清理\n        find ${DSYM_ZIP_OUT_DIR} -name \"*.bSymbol.zip\" -print0 | xargs -0 -I {} mv {} ${DSYM_SYMBOL_BACKUP_DIR}\n        /bin/rm -rf \"${DSYM_ZIP_OUT_DIR}/*.bSymbol.zip\"\n        \n        DSYM_ZIP_FPATH=\"${DSYM_ZIP_OUT_DIR}/${DSYM_SYMBOL_OUT_ZIP_NAME}\"\n        \n        # 提取符号信息\n        echo \"--------------------------------\"\n        echo \"Step 3: Extract symbol info from .dSYM file. to ${DSYM_ZIP_FPATH}\"\n        \n        if [ ! -f \"$BUGLY_SYMBOL_JAR_PATH\" ]; then\n        exitWithMessage \"Error: Jar file '${BUGLY_SYMBOL_JAR_PATH}' was not found. \\nPlease copy the jar file into ~/bin folder.\" 1\n        fi\n        \n        echo \"--------------------------------\"\n        (/usr/bin/java -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_SRC}\" -o \"${DSYM_ZIP_FPATH}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n        echo \"--------------------------------\"\n        \n        if [ ! -e \"${DSYM_ZIP_FPATH}\" ]; then\n        DSYM_SYMBOL_OUT_ZIP_NAME=$(ls ${DSYM_ZIP_OUT_DIR} | grep \".bSymbol.zip\")\n        DSYM_ZIP_FPATH=\"${DSYM_ZIP_OUT_DIR}/${DSYM_SYMBOL_OUT_ZIP_NAME}\"\n        DSYM_SYMBOL_OUT_ZIP_NAME=${DSYM_SYMBOL_OUT_ZIP_NAME//&/_}\n            fi\n            \n            if [ ! -e \"${DSYM_ZIP_FPATH}\" ] ; then\n            exitWithMessage \"no symbol file zip archive generated: ${DSYM_ZIP_FPATH}\" 0\n            fi\n            \n            echo \"Step 4: Upload the symbols of dSYM.\"\n            echo \"--------------------------------\"\n            echo \"zip : ${DSYM_SYMBOL_OUT_ZIP_NAME}\"\n            echo \"dir : ${DSYM_ZIP_FPATH}\"\n            \n            echo \"dSYM upload domain: ${DSYM_UPLOAD_DOMAIN}\"\n            DSYM_UPLOAD_URL=\"http://${DSYM_UPLOAD_DOMAIN}/upload/dsym?app=${BUGLY_APP_ID}&pid=2&ver=${BUGLY_APP_VERSION}&n=${DSYM_SYMBOL_OUT_ZIP_NAME}&key=${BUGLY_APP_KEY}&bid=${BUNDLE_IDENTIFIER}\"\n            echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n            # Upload dSYM to Bugly\n            echo \"curl --header \"Content-Type:application/zip\" --data-binary \"@${DSYM_ZIP_FPATH}\" \"${DSYM_UPLOAD_URL}\" --verbose\"\n            \n            echo \"--------------------------------\"\n            STATUS=$(/usr/bin/curl --header \"Content-Type:application/zip\" --data-binary \"@${DSYM_ZIP_FPATH}\" \"${DSYM_UPLOAD_URL}\" --verbose)\n            echo \"--------------------------------\"\n            \n            UPLOAD_RESULT=\"FAILTURE\"\n            echo \"Bugly server response: ${STATUS}\"\n            if [ ! \"${STATUS}\" ]; then\n            echo \"Error: Failed to upload the zip archive file.\"\n            elif [[ \"${STATUS}\" == *\":true\"* ]]; then\n            echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n            UPLOAD_RESULT=\"SUCCESS\"\n            else\n            echo \"Error: Failed to upload the zip archive file to Bugly.\"\n            fi\n            \n            #Remove temp dSYM archive\n            echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n            #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n            \n            if [ \"$?\" -ne 0 ]; then\n            exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n            fi\n            \n            echo \"--------------------------------\"\n            echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n            \n            if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n            echo \"--------------------------------\"\n            echo \"Failed to upload the dSYM\"\n            echo \"Please check the script and try it again.\"\n            fi\n            \n            echo \"----------------------------------------------------------------\"\n        }\n        \n        # .dSYM文件信息\n        \n        DSYM_FOLDER=\"${DWARF_DSYM_FOLDER_PATH}\"\n        IFS=$'\\n'\n        \n        echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n        RET=\"F\"\n        \n        for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n        RET=\"T\"\n        echo \"Found dSYM file: $dsymFile\"\n        uploadDSYM $dsymFile\n        done\n        \n        if [ $RET = \"F\" ]; then\n        exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n        fi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -728,7 +746,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-qq/ios/RCTQQAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../node_modules/react-native-qq/ios/RCTQQAPI",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -764,7 +785,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-qq/ios/RCTQQAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../node_modules/react-native-qq/ios/RCTQQAPI",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

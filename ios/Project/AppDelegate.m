@@ -9,6 +9,8 @@
 
 #import "AppDelegate.h"
 
+#import <Bugly/Bugly.h>
+
 #import "RCTRootView.h"
 
 #import "../Libraries/LinkingIOS/RCTLinkingManager.h"
@@ -23,6 +25,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  [Bugly startWithAppId:@"900045584"];
+  
   NSURL *jsCodeLocation;
   
 #ifdef DEBUG
@@ -34,6 +39,8 @@
 #else
   jsCodeLocation = [CodePush bundleURL];
 #endif
+  
+  BLYLogInfo(@"%@", jsCodeLocation);
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"Project"
